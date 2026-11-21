@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Rust executable",
+            // ${workspaceFolder}/target/debug/プロジェクト名 に合わせる
+            "program": "${workspaceFolder}/target/debug/codinggame-debug-template-for-rust",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "cargo build",
+            // lldbの神機能の一つ、stdinの自動入力指定です
+            "stdio": [
+                // 入力ファイルを指定します
+                "${workspaceFolder}/test.txt",
+                null,
+            ]
+        }
+    ]
+}
