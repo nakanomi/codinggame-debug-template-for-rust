@@ -11,7 +11,7 @@
 
 
 ## 📂 Folder structure (フォルダ構成)
-
+```
 codingame-debug-template-for-rust/
 ├── .vscode/
 │   ├── launch.json        # CodeLLDBによるstdin自動入力・デバッグ設定
@@ -21,6 +21,7 @@ codingame-debug-template-for-rust/
 │   └── test.log           # 実行時に出力されるログ全文
 ├── test.txt               # 入力ファイルのサンプル
 └── README.md              # リポジトリの目的・使い方・学んだことのまとめ
+```
 
 ## 👋 About Me
 
