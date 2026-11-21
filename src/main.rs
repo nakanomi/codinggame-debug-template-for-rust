@@ -5,7 +5,7 @@ fn calc_area(width : i32, height : i32) -> i32 {
 }
 
 fn main() {
-    // テスト用の数値入力サンプル1
+    // テスト用の数値入力サンプル:横幅
     let mut input_line = String::new();
     io::stdin().read_line(&mut input_line).unwrap();
     // ログ抽出スクリプト用のタグ出力
@@ -14,7 +14,7 @@ fn main() {
     let width: i32 = input_line.trim().parse().unwrap_or(0);
 
 
-    // テスト用の数値入力サンプル2
+    // テスト用の数値入力サンプル:高さ
     let mut input_line = String::new();
     io::stdin().read_line(&mut input_line).unwrap();
     // ログ抽出スクリプト用のタグ出力
@@ -29,7 +29,7 @@ fn main() {
 // テストの記述
 // rustは通常lib.rsに機能やテストを記述すると思いますが
 // codinggameでは1ソースにまとめる必要があるためテストも
-// main.rsに書く方が利便性が上がります(そのままコピーペースト可能)。
+// main.rsに書く方が利便性が上がります(テストごとコピーペースト可能)。
 // codinggameでの動作に影響を及ぼさないことは確認済みです(2026/11/21)
 // 
 #[cfg(test)]
