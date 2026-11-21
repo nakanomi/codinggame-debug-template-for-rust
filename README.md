@@ -5,10 +5,6 @@
   - **アピールポイント:** 開発環境の自動化・効率化（DX向上）と、他者が再現しやすい手順の言語化。
   - **必要環境:** 既にVSCode上でCodeLLDBを使ったデバッグの環境が整えられている必要があります。
 
----
-- **[codingame-debug-template-for-rust](https://github.com/nakanomi/codinggame-debug-template-for-rust)**
-    - 上記Qiita記事で紹介したVS Codeのデバッグ設定（`launch.json` / `tasks.json`）およびテスト生成スクリプトのテンプレートをまとめたリポジトリを含むgithub上のページです。
-
 
 ## 📂 Folder structure (フォルダ構成)
 ```
@@ -23,20 +19,33 @@ codingame-debug-template-for-rust/
 └── README.md              # リポジトリの目的・使い方・学んだことのまとめ
 ```
 
-## 👋 About Me
-
-C++やPythonを用いた開発・技術支援の実務経験を持つソフトウェアエンジニアです。
-現在はメモリ安全性への理解をさらに深めるため、**Rust**の学習に注力しています。
-
-次のことを大切にしています
-- コードは読みやすく書く
-- 手作業を減らし、仕組み化して効率を上げる 
-
----
-
-## 🛠 Technical Skills
-
-### Languages
-- **実務経験あり:** C++, Python, Lua, Excel VBA
-- **現在学習・実践中:** Rust
-
+## How to Use
+- stdinの自動入力について
+  - VSCodeでCodeLLDBを使ってデバッグできるようにする部分については、あなたの手で整えてください。
+  - main.rsの```eprintln!("#input:{}", input_line.trim_end());```の行にブレークポイントを設定してください。
+  - デバッグ実行してください。通常であればブレークポイントの上```io::stdin().read_line(&mut input_line).unwrap();```の行でターミナルから入力しなければならないところですが、その必要はなくブレークポイントの地点で止まっているはずです。
+- codinggameのログ抽出について
+  - main.rsの内容をcodinggameのお好きなパズルのソースコードエリアに貼り付け、実行させてください。失敗時のログがゲームページ左下のConsole outputに出力されるはずです。例えば[no-spoon-episod-1](https://www.codingame.com/ide/puzzle/there-is-no-spoon-episode-1)では下記のようになります。
+```
+Console outputGame informationAction (Output Stream)Debug (Errors Stream)
+Game information:
+Initializing APU weaponry...
+Standard Error Stream:
+#input:2
+#input:2
+Standard Output Stream:
+area is 4
+Game information:
+invalid input. Expected 'x1 y1 x2 y2 x3 y3' but found 'area is 4'
+```
+  - 上記ログをscripts_and_logフォルダのtext.logにコピーアンドペーストしてください。
+  - 下記のようにフォルダの中にあるextract_test.shを実行してください。
+```
+sh extract_test.sh
+```
+  - ターミナルに最初の2つの入力を取り出したものが出力されます。
+```
+2
+2
+```
+  - つまりmain.rsに書かれているように、stdinの直後に```eprintln!("#input:{}", input_line.trim_end());```を書いていけば、stdinの自動入力に使うtest.txtの内容を作成できるという事です。
