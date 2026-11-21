@@ -26,3 +26,18 @@ fn main() {
     // 結果の標準出力
     println!("area is {}", calc_area(width, height));
 }
+// テストの記述
+// rustは通常lib.rsに機能やテストを記述すると思いますが
+// codinggameでは1ソースにまとめる必要があるためテストも
+// main.rsに書く方が利便性が上がります(そのままコピーペースト可能)。
+// codinggameでの動作に影響を及ぼさないことは確認済みです(2026/11/21)
+// 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn it_works() {
+        assert_eq!(8, calc_area(4, 2));
+    }
+}
