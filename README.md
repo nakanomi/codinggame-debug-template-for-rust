@@ -5,10 +5,6 @@
   - **アピールポイント:** 開発環境の自動化・効率化（DX向上）と、他者が再現しやすい手順の言語化。
   - **必要環境:** 既にVSCode上でCodeLLDBを使ったデバッグの環境が整えられている必要があります。
 
----
-- **[codingame-debug-template-for-rust](https://github.com/nakanomi/codinggame-debug-template-for-rust)**
-    - 上記Qiita記事で紹介したVS Codeのデバッグ設定（`launch.json` / `tasks.json`）およびテスト生成スクリプトのテンプレートをまとめたリポジトリを含むgithub上のページです。
-
 
 ## 📂 Folder structure (フォルダ構成)
 ```
@@ -22,21 +18,4 @@ codingame-debug-template-for-rust/
 ├── test.txt               # 入力ファイルのサンプル
 └── README.md              # リポジトリの目的・使い方・学んだことのまとめ
 ```
-
-## 👋 About Me
-
-C++やPythonを用いた開発・技術支援の実務経験を持つソフトウェアエンジニアです。
-現在はメモリ安全性への理解をさらに深めるため、**Rust**の学習に注力しています。
-
-次のことを大切にしています
-- コードは読みやすく書く
-- 手作業を減らし、仕組み化して効率を上げる 
-
----
-
-## 🛠 Technical Skills
-
-### Languages
-- **実務経験あり:** C++, Python, Lua, Excel VBA
-- **現在学習・実践中:** Rust
 
